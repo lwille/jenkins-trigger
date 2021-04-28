@@ -27,6 +27,7 @@ async function requestJenkinsJob(jobName, params) {
   }
   await new Promise((resolve, reject) => request(req)
     .on('response', (res) => {
+      core.debug("Response headers", res.headers);
       core.info(`>>> Job is started!`);
       resolve();
     })
