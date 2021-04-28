@@ -84,7 +84,7 @@ async function main() {
     let jobName = core.getInput('job_name');
     if (core.getInput('parameter')) {
       params = JSON.parse(core.getInput('parameter'));
-      core.info(`>>> Parameter ${params.toString()}`);
+      core.info(`>>> Parameter ${JSON.stringify(params)}`);
     }
     // POST API call
     await requestJenkinsJob(jobName, params);
